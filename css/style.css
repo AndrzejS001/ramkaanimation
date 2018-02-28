@@ -1,0 +1,86 @@
+body{
+	margin: 0;
+	background-color: #715c5c;
+}
+#container{
+	width: 600px;
+	height: 600px;
+	position: relative;
+	margin: 20px auto;
+	background-image: url(../zad-zdj/4-jezioro.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 5px;
+	border: 5px solid #fff;
+}
+#frame{
+	position: absolute;
+	border:5px solid #000000;
+	height: 615px;
+	width: 615px;
+	left: -10px;
+	top: 50%;
+	right: -10px;
+	transform: translateY(-50%);
+	margin: auto;
+}
+#frame::after{
+	content: "";
+	position: absolute;
+	right: -5px;
+	border-right: 5px solid #000000;
+	height: 300px;
+	top: 50%;
+	opacity: 0;
+	transform: translateY(-50%);
+	transition-duration: 10s;
+	transition-timing-function: ease-in;
+}
+#frame::before{
+	content: "";
+	position: absolute;
+	left: -5px;
+	border-right: 5px solid #000000;
+	height: 300px;
+	top: 50%;
+	opacity: 0;
+	transform: translateY(-50%);
+	transition-duration: 10s;
+	transition-timing-function: ease-in;
+}
+h1{
+	position: absolute;
+	margin: 0;
+	color: #fff;
+	font-size: 50px;
+	background-color: #000000;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	text-align: center;
+	transform: translate(-50%,-50%);
+	
+}
+#frame{
+	transition-duration: 5s;
+}
+h1{
+	transition-duration: 10s;
+}
+h1, #frame{
+	opacity:0;
+	transition-timing-function: ease-in;
+} 
+#container:hover h1{
+	opacity: 1;
+	font-size: 65px;
+}
+#container:hover #frame{
+	opacity: 1;
+}
+#container:hover #frame::after{
+	opacity:1;
+}
+#container:hover #frame::before{
+	opacity:1;
+}
